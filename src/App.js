@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
@@ -8,16 +7,13 @@ class App extends Component {
 
     this.state = {
       data: null,
-      cardOffset: 40,
-      fetchedLimit: 20
+      cardOffset: 1,
+      fetchedLimit: 1
     };
   }
 
   componentDidMount() {
-    fetch(
-      "http://api.magicthegathering.io/v1/cards/?pageCount=" +
-        this.state.fetchedLimits
-    )
+    fetch("http://api.magicthegathering.io/v1/cards/?pageSize=1")
       .then(response => {
         return response.json();
       })
@@ -28,9 +24,9 @@ class App extends Component {
 
   fetchCards = () => {
     let url =
-      "http://api.magicthegathering.io/v1/cards/?pageCount=" +
+      "http://api.magicthegathering.io/v1/cards/?pageSize=1" +
       this.state.cardOffset;
-    let cardOffset = (this.state.cardOffset += 20);
+    let cardOffset = (this.state.cardOffset += 1);
 
     fetch(url)
       .then(response => response.json())
@@ -45,11 +41,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Magic The Gathering Reference Library</h1>
-        <input type="text" placeholder="search" />
         <div className="theCards">
           {this.state.data.cards.map((card, i) => {
             return (
-              <div>
+              <div className="cardImage">
                 <img key={i} src={card.imageUrl} alt="" />
               </div>
             );
@@ -58,6 +53,7 @@ class App extends Component {
         <button className="button" onClick={() => this.fetchCards()}>
           More Cards
         </button>
+        <input type="text" placeholder="search" />
       </div>
     );
   }

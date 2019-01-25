@@ -1,6 +1,12 @@
 .App {
+  color: blanchedalmond;
+  text-shadow: 5px 5px black;
   text-align: center;
-  background-color: #053b47;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://wallpapertag.com/wallpaper/full/c/2/c/516871-mtg-desktop-backgrounds-2560x1600-htc.jpg);
+  background-size: 100%;
+  margin: auto;
 }
 
 .theCards {
@@ -8,4 +14,9 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+  background-color: ;
+}
+
+.cardImage {
 }
