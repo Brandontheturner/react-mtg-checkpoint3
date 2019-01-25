@@ -15,7 +15,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch(
-      "http://api.magicthegathering.io/v1/cards/?pageSize=" +
+      "http://api.magicthegathering.io/v1/cards/?pageCount=" +
         this.state.fetchedLimits
     )
       .then(response => {
@@ -28,7 +28,7 @@ class App extends Component {
 
   fetchCards = () => {
     let url =
-      "http://api.magicthegathering.io/v1/cards/?pageSize=" +
+      "http://api.magicthegathering.io/v1/cards/?pageCount=" +
       this.state.cardOffset;
     let cardOffset = (this.state.cardOffset += 20);
 
@@ -45,6 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Magic The Gathering Reference Library</h1>
+        <input type="text" placeholder="search" />
         <div className="theCards">
           {this.state.data.cards.map((card, i) => {
             return (
