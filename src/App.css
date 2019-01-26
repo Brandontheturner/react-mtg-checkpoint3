@@ -5,8 +5,8 @@
   height: 100vh;
   width: 100vw;
   background-image: url(https://wallpapertag.com/wallpaper/full/c/2/c/516871-mtg-desktop-backgrounds-2560x1600-htc.jpg);
-  background-size: 100%;
-  margin: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .theCards {
@@ -19,4 +19,18 @@
 }
 
 .cardImage {
+}
+
+.loading {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://wallpapertag.com/wallpaper/full/b/2/b/516873-most-popular-mtg-desktop-backgrounds-2560x1600-pc.jpg);
+  background-size: cover;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  color: blanchedalmond;
 }
