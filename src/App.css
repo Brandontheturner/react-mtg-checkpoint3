@@ -14,11 +14,23 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: ;
 }
 
-.cardImage {
+.cardName {
+}
+
+.modalImage {
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 400px;
 }
 
 .loading {
@@ -28,9 +40,4 @@
   background-size: cover;
   font-size: 50px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-  color: blanchedalmond;
 }
