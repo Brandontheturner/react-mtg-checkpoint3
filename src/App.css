@@ -18,18 +18,9 @@
   background-color: ;
 }
 
-.cardName {
-}
-
-.modalImage {
-}
-
 .modalContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
+  display: list-item;
+  height: 400px;
   width: 400px;
 }
 
