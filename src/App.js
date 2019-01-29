@@ -47,6 +47,7 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState({ data }));
     this.setState({ cardPage: page + 1 });
+    window.scrollTo(0, 0);
   };
 
   toggleModal = () => {
@@ -74,14 +75,15 @@ class App extends Component {
     if (this.state.isLoading) {
       return (
         <div className="App">
-          <h1>Magic The Gathering Reference Library</h1>
+          <h1 className="loading" />
           <IsLoading />
         </div>
       );
     } else {
       return (
         <div className="App">
-          <h1>Magic The Gathering Reference Library</h1>
+          <h1 className="title" />
+          <h1>Card Library</h1>
           <RenderCards
             data={this.state.data}
             page={this.state.cardPage}
@@ -128,7 +130,7 @@ const RenderCards = props => {
         })}
       </div>
       <Button className="button" onClick={() => props.fetchCards(props.page)}>
-        More Cards
+        Next Page
       </Button>
       <Modal
         className="modalContainer"
