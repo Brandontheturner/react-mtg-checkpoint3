@@ -140,19 +140,24 @@ const RenderCards = props => {
         <ModalHeader toggle={() => props.toggleModal()}>
           <div className="cardName"> {props.currentName}</div>
         </ModalHeader>
-        <ModalBody className="modalContent">
+        <ModalBody>
           {/* {props.currentmanaCost} */}
           <img
             className="modalImage"
             src={props.currentimageUrl}
             alt={props.currentName}
           />
-          <div className="setName"> {props.currentsetName}</div>
-          {props.currentrarity}
-          {props.currenttext}
-          {props.currentpower}
-          {props.currenttoughness}
-          {props.currenttype}
+          <div className="cardInfo">
+            {" "}
+            <p>{props.currentsetName}</p>
+            <p>{props.currentrarity}</p>
+            <p>{props.currenttext}</p>
+            <h5>Power</h5>
+            <p>{props.currentpower}</p>
+            <h5>Toughness</h5>
+            <p>{props.currenttoughness}</p>
+            <p>{props.currenttype}</p>
+          </div>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={() => props.toggleModal()}>
